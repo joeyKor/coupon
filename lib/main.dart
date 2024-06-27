@@ -1,3 +1,4 @@
+import 'package:coupon/pages/expage.dart';
 import 'package:coupon/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screen_lock/flutter_screen_lock.dart';
@@ -13,14 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: ElevatedButton(
-            onPressed: () => screenLock(
-                context: context, correctString: '1234', canCancel: true),
-            child: const Text('pin')),
-      ),
-    );
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: ExercisePage());
   }
 }
