@@ -1,5 +1,6 @@
 import 'package:coupon/pages/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screen_lock/flutter_screen_lock.dart';
 
 // this is added 02
 
@@ -12,9 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: Scaffold(
+        body: ElevatedButton(
+            onPressed: () => screenLock(
+                context: context, correctString: '1234', canCancel: true),
+            child: const Text('pin')),
+      ),
     );
   }
 }
